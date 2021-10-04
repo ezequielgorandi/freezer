@@ -11,7 +11,8 @@ This is a **Python 3** software for **Raspberry Pi3B**
 - Peripherals: Magnetic sensor and lock.
 - Periodically check the magnetic sensor to detect if the door has been opened or closed.      
 - Allows the user to lock or unlock the door. Avoid locking the door if it is open.
-- When unlocking the door, it activates a timer to work after a certain time.
+- When unlocking the door, it activates a timer to lock the door after a certain time.
+  This variable can be set in **setup.py** `AUTO_LOCK_DOOR_TIME = 60 # [s]`
 
 ### Log:
 - Generates reports when opening, closing, locking, and unlocking the door and when an RFID is read
@@ -55,11 +56,12 @@ Install this package:
 
 
 ## Hardware
-The pins used for the peripherals can be configured in setup.py.
+The pins used for the peripherals can be configured in **setup.py**.
 By default, this configuration is used
 
 - Magnetic sensor: Pin11 as input.
 - Solenoid Lock DC 12V: Pin12 as output.
+- Locker on level as HIGH
 
 **Warning** A relay module is required to managing the solenoid.
 
